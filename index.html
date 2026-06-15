@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sonu Kumar | Software Engineer &amp; Web Developer</title>
+  <meta name="description" content="Portfolio of Sonu Kumar — Software Engineer, CSE Student and Web Developer." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230A0E14'/%3E%3Ctext x='50' y='65' font-size='46' font-family='monospace' font-weight='700' fill='%23C9A24B' text-anchor='middle'%3ESK%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+  <!-- ============ SCROLL PROGRESS BAR ============ -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ============ PRELOADER ============ -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-content">
+      <span class="preloader-bracket">&lt;</span>
+      <span class="preloader-text mono">SK</span>
+      <span class="preloader-bracket">/&gt;</span>
+    </div>
+  </div>
+
+  <!-- ============ CUSTOM CURSOR ============ -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="logo">
+        <span class="logo-bracket">&lt;</span>Sonu<span class="accent-text">.</span>Kumar<span class="logo-bracket">/&gt;</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#home" class="nav-link active" data-link>Home</a>
+        <a href="#about" class="nav-link" data-link>About</a>
+        <a href="#skills" class="nav-link" data-link>Skills</a>
+        <a href="#projects" class="nav-link" data-link>Projects</a>
+        <a href="#education" class="nav-link" data-link>Education</a>
+        <a href="#contact" class="nav-link" data-link>Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#contact" class="btn btn-sm btn-outline hide-mobile">
+          <i class="fa-solid fa-paper-plane"></i> Hire Me
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="home">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="grid-overlay"></div>
+      <div class="glow glow-1"></div>
+      <div class="glow glow-2"></div>
+    </div>
+
+    <div class="container hero-inner">
+      <div class="hero-content fade-up">
+        <p class="eyebrow mono"><i class="fa-solid fa-terminal"></i> sonu@portfolio:~$ whoami</p>
+
+        <h1 class="hero-title">
+          Hi, I'm <span class="accent-gradient">Sonu Kumar</span>
+        </h1>
+
+        <h2 class="hero-subtitle">
+          <span class="static-text">I'm a</span>
+          <span class="typed-text mono" id="typedText"></span><span class="typed-cursor">|</span>
+        </h2>
+
+        <p class="hero-desc">
+          A Computer Science (CSE) student and aspiring software engineer who loves
+          turning ideas into clean, fast and reliable web applications — from
+          pixel-perfect interfaces to well-structured backend logic.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">
+            <i class="fa-solid fa-diagram-project"></i> View My Work
+          </a>
+          <a href="#contact" class="btn btn-outline">
+            <i class="fa-regular fa-paper-plane"></i> Let's Talk
+          </a>
+          <a href="https://drive.google.com/file/d/1ilE5pg50AcXIDaFtqqXF_Vdp1VWdk8xz/view?usp=drivesdk" class="btn btn-ghost" download>
+            <i class="fa-solid fa-download"></i> Resume
+          </a>
+        </div>
+
+        <div class="hero-socials">
+          <a href="https://github.com/sonukrnw1234-glitch" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/sonu-kumar-4bb163378/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://leetcode.com/u/Sonu01012003kumar/" target="_blank" rel="noopener" aria-label="LeetCode"><i class="fa-solid fa-code"></i></a>
+          <a href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://www.instagram.com/son_u_7367/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="mailto:sonukrnw1234@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+
+      <div class="hero-visual fade-up" data-delay="150">
+        <div class="profile-frame">
+          <div class="frame-corner corner-tl"></div>
+          <div class="frame-corner corner-br"></div>
+          <img src="assets/image31.png" alt="Portrait of Sonu Kumar" class="profile-img">
+          <div class="status-chip">
+            <span class="status-dot"></span> Available for work
+          </div>
+        </div>
+
+        <div class="floating-badge badge-1" title="React"><i class="fa-brands fa-react"></i></div>
+        <div class="floating-badge badge-2" title="Node.js"><i class="fa-brands fa-node-js"></i></div>
+        <div class="floating-badge badge-3" title="Java"><i class="fa-brands fa-java"></i></div>
+        <div class="floating-badge badge-4" title="Git"><i class="fa-brands fa-git-alt"></i></div>
+        <div class="floating-badge badge-5" title="Database"><i class="fa-solid fa-database"></i></div>
+      </div>
+    </div>
+
+    <a href="#about" class="scroll-down" aria-label="Scroll down">
+      <span>scroll</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </a>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-head fade-up">
+        <span class="tag mono">// about-me.md</span>
+        <h2 class="section-title">About Me</h2>
+        <p class="section-sub">A quick introduction before you scroll through my work.</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="terminal fade-up">
+          <div class="terminal-bar">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+            <span class="terminal-title mono">Sonu@portfolio: ~</span>
+          </div>
+          <div class="terminal-body mono">
+            <p><span class="prompt">$</span> cat about.txt</p>
+            <p class="out">Name      : Sonu Kumar</p>
+            <p class="out">Role      : Software Engineer / Web Developer</p>
+            <p class="out">Education : B.Tech, Computer Science &amp; Engineering</p>
+            <p class="out">Focus     : DSA, Web Development, Open Source</p>
+            <p class="out">Status    : Open to internships &amp; freelance work</p>
+            <p><span class="prompt">$</span> <span class="blink-line">_</span></p>
+          </div>
+        </div>
+
+        <div class="about-info fade-up" data-delay="120">
+          <h3>Turning curiosity into code.</h3>
+          <p>
+            I'm Sonu Kumar, a Computer Science Engineering student with a deep interest in
+            building software that's both functional and delightful to use. My journey
+            started with curiosity about how websites work, and has grown into a passion
+            for full-stack development, data structures &amp; algorithms, and writing
+            clean, maintainable code.
+          </p>
+          <p>
+            I enjoy solving problems, learning new technologies and collaborating on
+            projects that challenge me to grow — whether that's a sleek front-end
+            interface or a robust back-end system.
+          </p>
+
+          <div class="stats-grid">
+            <div class="stat-card">
+              <h3 class="counter" data-target="10">0</h3>
+              <p>Projects Built</p>
+            </div>
+            <div class="stat-card">
+              <h3 class="counter" data-target="1100">0</h3>
+              <p>DSA Problems Solved</p>
+            </div>
+            <div class="stat-card">
+              <h3 class="counter" data-target="6">0</h3>
+              <p>Technologies</p>
+            </div>
+            <div class="stat-card">
+              <h3 class="counter" data-target="2">0</h3>
+              <p>Years of Learning</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section class="section section-alt" id="skills">
+    <div class="container">
+      <div class="section-head fade-up">
+        <span class="tag mono">// skills.json</span>
+        <h2 class="section-title">My Skill Set</h2>
+        <p class="section-sub">Tools and technologies I use to bring ideas to life.</p>
+      </div>
+
+      <div class="skills-grid">
+
+        <div class="skill-card fade-up">
+          <div class="skill-card-head">
+            <i class="fa-solid fa-code"></i>
+            <h3>Languages</h3>
+          </div>
+          <ul class="skill-list">
+            <li><i class="fa-brands fa-java"></i> Java</li>
+            <li><i class="fa-solid fa-c"></i> C / C++</li>
+            <li><i class="fa-brands fa-python"></i> Python</li>
+            <li><i class="fa-brands fa-square-js"></i> JavaScript</li>
+          </ul>
+        </div>
+
+        <div class="skill-card fade-up" data-delay="80">
+          <div class="skill-card-head">
+            <i class="fa-solid fa-display"></i>
+            <h3>Frontend</h3>
+          </div>
+          <ul class="skill-list">
+            <li><i class="fa-brands fa-html5"></i> HTML5</li>
+            <li><i class="fa-brands fa-css3-alt"></i> CSS3</li>
+            <li><i class="fa-brands fa-react"></i> React JS</li>
+            <li><i class="fa-brands fa-bootstrap"></i> Bootstrap / Tailwind</li>
+          </ul>
+        </div>
+
+        <div class="skill-card fade-up" data-delay="160">
+          <div class="skill-card-head">
+            <i class="fa-solid fa-server"></i>
+            <h3>Backend &amp; Database</h3>
+          </div>
+          <ul class="skill-list">
+            <li><i class="fa-brands fa-node-js"></i> Node.js &amp; Express</li>
+            <li><i class="fa-solid fa-database"></i> MongoDB</li>
+            <li><i class="fa-solid fa-database"></i> MySQL</li>
+            <li><i class="fa-solid fa-plug"></i> REST APIs</li>
+          </ul>
+        </div>
+
+        <div class="skill-card fade-up" data-delay="240">
+          <div class="skill-card-head">
+            <i class="fa-solid fa-toolbox"></i>
+            <h3>Tools &amp; Platforms</h3>
+          </div>
+          <ul class="skill-list">
+            <li><i class="fa-brands fa-git-alt"></i> Git &amp; GitHub</li>
+            <li><i class="fa-solid fa-code"></i> VS Code</li>
+            <li><i class="fa-brands fa-figma"></i> Figma</li>
+            <li><i class="fa-brands fa-linux"></i> Linux</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Proficiency bars -->
+      <div class="proficiency fade-up">
+        <h3 class="proficiency-title mono">// proficiency-overview</h3>
+        <div class="bar-row">
+          <div class="bar-label"><span>Web Development</span><span>90%</span></div>
+          <div class="bar-track"><div class="bar-fill" data-width="90"></div></div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label"><span>Data Structures &amp; Algorithms</span><span>80%</span></div>
+          <div class="bar-track"><div class="bar-fill" data-width="80"></div></div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label"><span>React &amp; JavaScript</span><span>85%</span></div>
+          <div class="bar-track"><div class="bar-fill" data-width="85"></div></div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label"><span>Database Management</span><span>75%</span></div>
+          <div class="bar-track"><div class="bar-fill" data-width="75"></div></div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label"><span>Java / OOP Concepts</span><span>82%</span></div>
+          <div class="bar-track"><div class="bar-fill" data-width="82"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-head fade-up">
+        <span class="tag mono">// projects.tsx</span>
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-sub">A selection of things I've built and shipped.</p>
+      </div>
+
+      <div class="filter-bar fade-up">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="web">Web Apps</button>
+        <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+        <button class="filter-btn" data-filter="academic">Academic</button>
+      </div>
+
+      <div class="projects-grid">
+
+        <article class="project-card fade-up" data-category="fullstack">
+          <div class="project-img">
+            <img src="assets/project-ecommerce.png" alt="E-Commerce Platform project preview">
+            <div class="project-overlay">
+              <a href="#" target="_blank" rel="noopener" aria-label="Live Demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+              <a href="#" target="_blank" rel="noopener" aria-label="Source Code"><i class="fa-brands fa-github"></i></a>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>E-Commerce Platform</h3>
+            <p>A full-featured MERN-stack shopping platform with user authentication, cart management, product filtering and an admin dashboard.</p>
+            <div class="project-tags">
+              <span>React</span><span>Node.js</span><span>Express</span><span>MongoDB</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card fade-up" data-category="fullstack" data-delay="80">
+          <div class="project-img">
+            <img src="assets/project-chat.png" alt="Real-time chat application preview">
+            <div class="project-overlay">
+              <a href="#" target="_blank" rel="noopener" aria-label="Live Demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+              <a href="#" target="_blank" rel="noopener" aria-label="Source Code"><i class="fa-brands fa-github"></i></a>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>Real-Time Chat App</h3>
+            <p>A real-time messaging application with private rooms, typing indicators and online presence, built using Socket.io.</p>
+            <div class="project-tags">
+              <span>Node.js</span><span>Socket.io</span><span>Express</span><span>MongoDB</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card fade-up" data-category="academic" data-delay="160">
+          <div class="project-img">
+            <img src="assets/project-student.png" alt="Student management system preview">
+            <div class="project-overlay">
+              <a href="#" target="_blank" rel="noopener" aria-label="Live Demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+              <a href="#" target="_blank" rel="noopener" aria-label="Source Code"><i class="fa-brands fa-github"></i></a>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>Student Management System</h3>
+            <p>A desktop &amp; web-based CRUD application to manage student records, attendance and grades with a MySQL database.</p>
+            <div class="project-tags">
+              <span>Java</span><span>JDBC</span><span>MySQL</span><span>OOP</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card fade-up" data-category="web" data-delay="240">
+          <div class="project-img">
+            <img src="assets/project-weather.png" alt="Weather dashboard preview">
+            <div class="project-overlay">
+              <a href="#" target="_blank" rel="noopener" aria-label="Live Demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+              <a href="#" target="_blank" rel="noopener" aria-label="Source Code"><i class="fa-brands fa-github"></i></a>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>Weather Dashboard</h3>
+            <p>A responsive weather application that fetches live data from a public API and displays forecasts with clean visuals.</p>
+            <div class="project-tags">
+              <span>JavaScript</span><span>HTML5</span><span>CSS3</span><span>API</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EDUCATION / TIMELINE ============ -->
+  <section class="section section-alt" id="education">
+    <div class="container">
+      <div class="section-head fade-up">
+        <span class="tag mono">// education.log</span>
+        <h2 class="section-title">Education &amp; Journey</h2>
+        <p class="section-sub">The path that shaped my skills so far.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item fade-up">
+          <div class="timeline-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div class="timeline-content">
+            <span class="timeline-date mono">2022 — 2026</span>
+            <h3>B.Tech, Computer Science &amp; Engineering</h3>
+            <p>Pursuing a bachelor's degree with focus on Data Structures, Algorithms, Database Systems, Operating Systems and Web Technologies.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item fade-up" data-delay="100">
+          <div class="timeline-icon"><i class="fa-solid fa-laptop-code"></i></div>
+          <div class="timeline-content">
+            <span class="timeline-date mono">2023 — Present</span>
+            <h3>Self-Taught Web Development</h3>
+            <p>Built strong foundations in HTML, CSS, JavaScript and the MERN stack through personal projects, online courses and open-source contributions.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item fade-up" data-delay="200">
+          <div class="timeline-icon"><i class="fa-solid fa-school"></i></div>
+          <div class="timeline-content">
+            <span class="timeline-date mono">2020 — 2022</span>
+            <h3>Higher Secondary Education (PCM)</h3>
+            <p>Completed schooling with Physics, Chemistry and Mathematics, building a strong analytical and problem-solving foundation.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item fade-up" data-delay="300">
+          <div class="timeline-icon"><i class="fa-solid fa-trophy"></i></div>
+          <div class="timeline-content">
+            <span class="timeline-date mono">Ongoing</span>
+            <h3>Competitive Programming &amp; Certifications</h3>
+            <p>Actively solving DSA problems on LeetCode/GFG and completing certifications in web development and computer science fundamentals.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-head fade-up">
+        <span class="tag mono">// contact.send()</span>
+        <h2 class="section-title">Let's Build Something Together</h2>
+        <p class="section-sub">Have a project in mind, an internship opportunity, or just want to say hi?</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info fade-up">
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div>
+              <h4>Email</h4>
+              <p>sonukrnw1234@gmail.com</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+            <div>
+              <h4>Phone</h4>
+              <p>+91 7367856636</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div>
+              <h4>Location</h4>
+              <p>India</p>
+            </div>
+          </div>
+
+          <div class="contact-socials">
+            <a href="https://github.com/sonukrnw1234-glitch" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/sonu-kumar-4bb163378/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://leetcode.com/u/Sonu01012003kumar/" target="_blank" rel="noopener" aria-label="LeetCode"><i class="fa-solid fa-code"></i></a>
+            <a href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.instagram.com/son_u_7367/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <form class="contact-form fade-up" id="contactForm" data-delay="120">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Your Email</label>
+              <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="What's this about?" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Write your message..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">
+            <i class="fa-solid fa-paper-plane"></i> Send Message
+          </button>
+          <p class="form-status" id="formStatus"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a href="#home" class="logo">
+        <span class="logo-bracket">&lt;</span>Sonu<span class="accent-text">.</span>Kumar<span class="logo-bracket">/&gt;</span>
+      </a>
+      <p class="footer-text">Software Engineer · CSE Student · Web Developer</p>
+      <div class="footer-socials">
+        <a href="https://github.com/sonukrnw1234-glitch" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/sonu-kumar-4bb163378/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://leetcode.com/u/Sonu01012003kumar/" target="_blank" rel="noopener" aria-label="LeetCode"><i class="fa-solid fa-code"></i></a>
+        <a href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="mailto:sonukrnw1234@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+      <p class="footer-copy">&copy; <span id="year"></span> Sonu Kumar. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ============ BACK TO TOP ============ -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
