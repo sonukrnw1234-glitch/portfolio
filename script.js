@@ -214,45 +214,101 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ---------------- Contact form (front-end only) ---------------- */
+ /* ================================================================
+     CONTACT FORM — powered by EmailJS (free, no backend needed)
+     Messages go directly to: sonukrnw1234@gmail.com
+
+     ── ONE-TIME SETUP (takes ~5 minutes) ──────────────────────────
+     1. Go to https://www.emailjs.com  →  Sign Up (free)
+     2. Dashboard → Email Services → Add New Service
+        • Choose Gmail → connect sonukrnw1234@gmail.com → Save
+        • Copy the  Service ID  (looks like "service_xxxxxxx")
+     3. Dashboard → Email Templates → Create New Template
+        • Subject field:   {{subject}} — from {{from_name}}
+        • Body (HTML or text):
+            Name:    {{from_name}}
+            Email:   {{reply_to}}
+            Subject: {{subject}}
+            Message: {{message}}
+        • "To Email" field: sonukrnw1234@gmail.com
+        • Save → copy the  Template ID  (looks like "template_xxxxxxx")
+     4. Dashboard → Account → General → copy your  Public Key
+     5. Paste all three values in the three variables below:
+  ================================================================ */
+
+  const EMAILJS_PUBLIC_KEY  = "MTJhjYyidEjyhsWxX";       // ← paste here
+  const EMAILJS_SERVICE_ID  = "service_vkrymdq";       // ← paste here
+  const EMAILJS_TEMPLATE_ID =  "template_ca6tj9h";      // ← paste here
+
+  // Initialize EmailJS
+  if (typeof emailjs !== 'undefined') {
+    emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+  }
+
   const contactForm = document.getElementById('contactForm');
-  const formStatus = document.getElementById('formStatus');
+  const formStatus  = document.getElementById('formStatus');
+
+  const showStatus = (msg, isError = false) => {
+    formStatus.style.color = isError ? '#e76f51' : '#4fd1c5';
+    formStatus.textContent = msg;
+  };
 
   if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      const name = contactForm.name.value.trim();
-      const email = contactForm.email.value.trim();
+      const name    = contactForm.name.value.trim();
+      const email   = contactForm.email.value.trim();
       const subject = contactForm.subject.value.trim();
       const message = contactForm.message.value.trim();
 
+      /* --- Validation --- */
       if (!name || !email || !subject || !message) {
-        formStatus.style.color = '#e76f51';
-        formStatus.textContent = 'Please fill in all fields before sending.';
+        showStatus('Please fill in all fields before sending.', true);
         return;
       }
-
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailPattern.test(email)) {
-        formStatus.style.color = '#e76f51';
-        formStatus.textContent = 'Please enter a valid email address.';
+        showStatus('Please enter a valid email address.', true);
         return;
       }
 
-      // Simulate sending (no backend connected)
-      const submitBtn = contactForm.querySelector('button[type="submit"]');
-      const originalHTML = submitBtn.innerHTML;
-      submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
-      submitBtn.disabled = true;
+      /* --- Guard: remind user to set up keys --- */
+      if (
+        EMAILJS_PUBLIC_KEY  === 'YOUR_PUBLIC_KEY' ||
+        EMAILJS_SERVICE_ID  === 'YOUR_SERVICE_ID' ||
+        EMAILJS_TEMPLATE_ID === 'YOUR_TEMPLATE_ID'
+      ) {
+        showStatus('⚙️ EmailJS is not configured yet. See the setup guide in script.js.', true);
+        return;
+      }
 
-      setTimeout(() => {
-        formStatus.style.color = '#4fd1c5';
-        formStatus.textContent = `Thanks, ${name}! Your message has been noted. I'll get back to you soon.`;
-        submitBtn.innerHTML = originalHTML;
-        submitBtn.disabled = false;
+      /* --- Send via EmailJS --- */
+      const submitBtn   = contactForm.querySelector('button[type="submit"]');
+      const originalHTML = submitBtn.innerHTML;
+      submitBtn.innerHTML  = '<i class="fa-solid fa-spinner fa-spin"></i> Sending…';
+      submitBtn.disabled   = true;
+      showStatus('');
+
+      const templateParams = {
+        from_name : name,
+        reply_to  : email,
+        subject   : subject,
+        message   : message,
+      };
+
+      try {
+        await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
+
+        showStatus(`✅ Message sent! Thanks ${name}, I'll reply to ${email} soon.`);
         contactForm.reset();
-      }, 1200);
+      } catch (err) {
+        console.error('EmailJS error:', err);
+        showStatus('❌ Something went wrong. Please try emailing directly: sonukrnw1234@gmail.com', true);
+      } finally {
+        submitBtn.innerHTML = originalHTML;
+        submitBtn.disabled  = false;
+      }
     });
   }
 
