@@ -214,7 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
- /* ================================================================
+/* ================================================================
      CONTACT FORM — powered by EmailJS (free, no backend needed)
      Messages go directly to: sonukrnw1234@gmail.com
 
@@ -236,9 +236,11 @@ document.addEventListener('DOMContentLoaded', () => {
      5. Paste all three values in the three variables below:
   ================================================================ */
 
-  const EMAILJS_PUBLIC_KEY  = "MTJhjYyidEjyhsWxX";       // ← paste here
-  const EMAILJS_SERVICE_ID  = "service_vkrymdq";       // ← paste here
-  const EMAILJS_TEMPLATE_ID =  "template_ca6tj9h";      // ← paste here
+ const EMAILJS_PUBLIC_KEY = "MTJhjYyidEjyhsWxX";
+const EMAILJS_SERVICE_ID = "service_vkrymdq";
+
+const CONTACT_TEMPLATE_ID = "template_8pajkwm";
+const AUTO_REPLY_TEMPLATE_ID = "template_ca6tj9h";
 
   // Initialize EmailJS
   if (typeof emailjs !== 'undefined') {
@@ -274,15 +276,13 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       /* --- Guard: remind user to set up keys --- */
-      if (
-        EMAILJS_PUBLIC_KEY  === 'YOUR_PUBLIC_KEY' ||
-        EMAILJS_SERVICE_ID  === 'YOUR_SERVICE_ID' ||
-        EMAILJS_TEMPLATE_ID === 'YOUR_TEMPLATE_ID'
-      ) {
-        showStatus('⚙️ EmailJS is not configured yet. See the setup guide in script.js.', true);
-        return;
-      }
-
+       if (
+  EMAILJS_PUBLIC_KEY === 'YOUR_PUBLIC_KEY' ||
+  EMAILJS_SERVICE_ID === 'YOUR_SERVICE_ID'
+) {
+  showStatus('⚙️ EmailJS is not configured yet.', true);
+  return;
+}
       /* --- Send via EmailJS --- */
       const submitBtn   = contactForm.querySelector('button[type="submit"]');
       const originalHTML = submitBtn.innerHTML;
@@ -290,15 +290,27 @@ document.addEventListener('DOMContentLoaded', () => {
       submitBtn.disabled   = true;
       showStatus('');
 
-      const templateParams = {
-        from_name : name,
-        reply_to  : email,
-        subject   : subject,
-        message   : message,
-      };
+     const templateParams = {
+  name: name,
+  email: email,
+  subject: subject,
+  message: message
+};
 
       try {
-        await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
+       // Mail to Sonu
+await emailjs.send(
+  EMAILJS_SERVICE_ID,
+  CONTACT_TEMPLATE_ID,
+  templateParams
+);
+
+// Auto reply to visitor
+await emailjs.send(
+  EMAILJS_SERVICE_ID,
+  AUTO_REPLY_TEMPLATE_ID,
+  templateParams
+);
 
         showStatus(`✅ Message sent! Thanks ${name}, I'll reply to ${email} soon.`);
         contactForm.reset();
